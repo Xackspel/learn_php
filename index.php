@@ -1,7 +1,7 @@
 <?php
     $person = [
         "name" => "Oleksii",
-        "surname" => "Zhmud",
+        "surname" => "Zhuk",
         "city" => "Uman",
         "age" => "32",
         "months" => ["January", "February", "April", "May"],
