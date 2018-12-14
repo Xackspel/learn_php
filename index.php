@@ -55,16 +55,16 @@
 
     $drinks = ["Mineral", "Destilated", "Water","Cola", "Pepsi", "Fanta", "Sprite","Beer", "Vodka"];
 
-    $drink_rand = array_rand($drinks, 1);
-    echo $drink_rand.PHP_EOL;
+    $drink_rand = array_rand($drinks);
+    //echo $drink_rand.PHP_EOL;
 
-    if ($drink_rand == "Cola") {
+    if ($drink_rand == 3) {
         echo "Great, I have bought Cola!!!".PHP_EOL;
     }
-    elseif ($drink_rand == "Sprite") {
+    elseif ($drink_rand == 7) {
         echo "Well, I have didn't found Cola, but I have bought the Sprite".PHP_EOL;
     }
-    elseif ($drink_rand == "Fanta") {
+    elseif ($drink_rand == 6) {
         echo "Hey, I have didn't found Cola or Sprite, but I have bought the Fanta".PHP_EOL;
     }
     else {
