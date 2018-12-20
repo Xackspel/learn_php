@@ -1,4 +1,4 @@
-<?php
-    error_reporting(E_ALL);
-    echo $_GET["name"];
-?>
+<form action="about.php" method="POST">
+    <input name="myname" type="text"><br>
+    <button>Confirm</button>
+</form>
