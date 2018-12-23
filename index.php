@@ -29,7 +29,13 @@
 <body>
     <div class="container">
         <div class="row">
-            <?php foreach($posts as $post){echo $post};?>
+            <?php foreach($posts as $post):?>
+                <div class="col-md-4">
+                    <h2><?php echo $post["title"]?></h2>
+                    <p><?php echo $post["desc"]?></p>
+                    <a href="#">Show more</a>
+                </div>
+            <?php endforeach;?>
         </div>
     </div>
 </body>
