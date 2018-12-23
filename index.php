@@ -1,6 +1,9 @@
 <?php
     session_start();
 
+    $pdo = new PDO("mysql:host=learnphp;dbname=testing","root","");
+    var_dump($pdo); die;
+    
     $posts = [
         [
             "title" => "First steps in learning language",
