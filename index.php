@@ -2,23 +2,8 @@
     session_start();
 
     $pdo = new PDO("mysql:host=learnphp;dbname=testing","root","");
-    var_dump($pdo); die;
-    
-    $posts = [
-        [
-            "title" => "First steps in learning language",
-            "desc" => "Lorem ipsum dolor sit amet, volutpat pertinacia interpretaris"
-        ],
-        [
-            "title" => "Second steps in learning language",
-            "desc" => "Lorem ipsum dolor sit amet, volutpat pertinacia interpretaris"
-        ],
-        [
-            "title" => "Third steps in learning language",
-            "desc" => "Lorem ipsum dolor sit amet, volutpat pertinacia interpretaris"
-        ],
-
-    ];
+    $statement = $pdo -> query("SELECT * FROM posts");
+    $posts = $statement -> fetchall(PDO::FETCH_ASSOC);  
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,8 +19,8 @@
         <div class="row">
             <?php foreach($posts as $post):?>
                 <div class="col-md-4">
-                    <h2><?php echo $post["title"]?></h2>
-                    <p><?php echo $post["desc"]?></p>
+                    <h2><?php echo $post["name"]?></h2>
+                    <p><?php echo $post["description"]?></p>
                     <a href="#">Show more</a>
                 </div>
             <?php endforeach;?>
