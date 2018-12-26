@@ -1,9 +1,10 @@
 <?php
     session_start();
 
+    $PostId = $_GET['Id'];
+    
     $pdo = new PDO("mysql:host=learnphp;dbname=testing","root","");
-    $statement = $pdo -> query("SELECT * FROM posts");
-    $posts = $statement -> fetchall(PDO::FETCH_ASSOC);  
+    $statement = $pdo -> query("DELETE FROM `posts` WHERE Id='$PostId'");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,25 +30,13 @@
     </div>
     <div class="container">
         <br>
-        <h1 class="text-center">Module #1. Home Task.</h1>
+        <h1 class="text-center">The post have been deleted!</h1>
         <br>
-        <button type="button" class="btn btn-success" onclick="document.location='newpost.php'">New Post</button>
     </div>
-    <br>
     <div class="container">
-        <div class="row">
-            <?php foreach($posts as $post):?>
-                <div class="col-md-4">
-                    <br>
-                    <h2><?php echo $post["name"]?></h2>
-                    <p><?php echo $post["description"]?></p>
-                    <!-- <p><?php echo $post["Id"]?></p> -->
-                    <button type="button" class="btn btn-primary">Update Post</button>
-                    <button type="button" class="btn btn-dark" onclick="document.location='deletepost.php?Id=<?php echo $post["Id"]?>'">Delete Post</button>
-                </div>
-                
-            <?php endforeach;?>
-        </div>
+        <form action="newpost.php" method="POST">
+            <button type="button" class="btn btn-dark" onclick="document.location='index.php'">Return to homepage</button>
+        </form>
     </div>
 </body>
 </html>
