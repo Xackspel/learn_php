@@ -20,7 +20,7 @@
         <div class="bg-dark p-4">
             <div class=row>
                 <div class="col-sm">
-                    <img src="http://marlindev.ru/img/new/logo.svg" alt="Marlin dev school">
+                    <img src="http://marlindev.ru/img/new/logo.svg" alt="Marlin dev school" title="Marlin dev school">
                 </div>
                 <div class="col-sm">
                     <font color="white"><h2 class="text-right" color="white">Aleksey Zhuk [ 1 ]</h2></font>
@@ -39,7 +39,9 @@
                 <div class="col-md-4">
                     <h2><?php echo $post["name"]?></h2>
                     <p><?php echo $post["description"]?></p>
-                    <a href="#">Show more</a>
+                    <button type="button" class="btn btn-success" onclick="document.location='newpost.php'">New Post</button>
+                    <button type="button" class="btn btn-primary">Update Post</button>
+                    <button type="button" class="btn btn-dark">Delete Post</button>
                 </div>
             <?php endforeach;?>
         </div>
