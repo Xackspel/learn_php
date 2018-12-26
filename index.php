@@ -15,6 +15,24 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 </head>
 <body>
+    
+    <div class="container">
+        <div class="bg-dark p-4">
+            <div class=row>
+                <div class="col-sm">
+                    <img src="http://marlindev.ru/img/new/logo.svg" alt="Marlin dev school">
+                </div>
+                <div class="col-sm">
+                    <font color="white"><h2 class="text-right" color="white">Aleksey Zhuk [ 1 ]</h2></font>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <br>
+        <h1 class="text-center">Module #1. Home Task.</h1>
+        <br>
+    </div>
     <div class="container">
         <div class="row">
             <?php foreach($posts as $post):?>
