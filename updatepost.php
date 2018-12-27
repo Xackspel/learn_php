@@ -50,13 +50,13 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1">Update Post Name</span>
                 </div>
-                <input type="text" name="PostName" class="form-control" placeholder="<?php echo $NamePost?>" aria-label="Postname" aria-describedby="basic-addon1">
+                <input type="text" name="PostName" maxlength="255" class="form-control" placeholder="<?php echo $NamePost?>" aria-label="Postname" aria-describedby="basic-addon1">
             </div>
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Update Post Text &nbsp&nbsp</span>
                 </div>
-                <input name="PostText" class="form-control" aria-label="Postext" placeholder="<?php echo $TextPost?>">
+                <input name="PostText" maxlength="255" class="form-control" aria-label="Postext" placeholder="<?php echo $TextPost?>">
             </div>
             <br>
             <button type="submit" class="btn btn-primary">Confirm Updating</button>

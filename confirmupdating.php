@@ -4,11 +4,11 @@
     $PostIdent = $_POST['PostId']; // Retreiweing post Id
     $PostName = $_POST['PostName']; //Retreiweing Post Name
     $PostText = $_POST['PostText']; //Retreiweing Post Text
-    var_dump($_POST);
-    var_dump($PostIdent);
+    
+    
     $pdo = new PDO("mysql:host=learnphp;dbname=testing","root","");
     $statement = $pdo -> query("UPDATE `posts` SET `name`='$PostName',`description`='$PostText' WHERE Id='$PostIdent'");
-    var_dump($statement);
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
