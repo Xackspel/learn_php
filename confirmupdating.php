@@ -1,9 +1,15 @@
 <?php
     session_start();
 
+    $PostId =  $_POST['Id']; // Retreiweing post Id
+    $IntPostId = 1 * $PostId; // convert to Int
+    $PostName = $_POST['PostName']; //Retreiweing Post Name
+    $PostText = $_POST['PostText']; //Retreiweing Post Text
+    var_dump($_POST);
+    var_dump($IntPostId);
     $pdo = new PDO("mysql:host=learnphp;dbname=testing","root","");
-    $statement = $pdo -> query("SELECT * FROM posts");
-    $posts = $statement -> fetchall(PDO::FETCH_ASSOC);  
+    $statement = $pdo -> query("UPDATE `posts` SET `name`='$PostName',`description`='$PostText' WHERE Id='$IntPostId'");
+    var_dump($statement);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,25 +35,13 @@
     </div>
     <div class="container">
         <br>
-        <h1 class="text-center">Module #1. Home Task.</h1>
+        <h1 class="text-center">The post have been Updated!</h1>
         <br>
-        <button type="button" class="btn btn-success" onclick="document.location='newpost.php'">New Post</button>
     </div>
-    <br>
     <div class="container">
-        <div class="row">
-            <?php foreach($posts as $post):?>
-                <div class="col-md-4">
-                    <br>
-                    <h2><?php echo $post["name"]?></h2>
-                    <p><?php echo $post["description"]?></p>
-                    <!-- <p><?php echo $post["Id"]?></p> -->
-                    <button type="button" class="btn btn-primary" onclick="document.location='updatepost.php?Id=<?php echo $post["Id"]?>'">Update Post</button>
-                    <button type="button" class="btn btn-dark" onclick="document.location='deletepost.php?Id=<?php echo $post["Id"]?>'">Delete Post</button>
-                </div>
-                
-            <?php endforeach;?>
-        </div>
+        <form action="newpost.php">
+            <button type="button" class="btn btn-dark" onclick="document.location='index.php'">Return to homepage</button>
+        </form>
     </div>
 </body>
 </html>
