@@ -44,7 +44,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1">Post Id</span>
                 </div>
-                <input type="hyden" name="PostId" class="form-control" value="<?php echo $PostId?>" aria-label="Postname" aria-describedby="basic-addon1">
+                <input type="integer" name="PostId" class="form-control" value="<?php echo $PostId?>" aria-label="Postname" aria-describedby="basic-addon1">
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">

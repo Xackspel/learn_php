@@ -1,14 +1,13 @@
 <?php
     session_start();
 
-    $PostId =  $_POST['Id']; // Retreiweing post Id
-    $IntPostId = 1 * $PostId; // convert to Int
+    $PostIdent = $_POST['PostId']; // Retreiweing post Id
     $PostName = $_POST['PostName']; //Retreiweing Post Name
     $PostText = $_POST['PostText']; //Retreiweing Post Text
     var_dump($_POST);
-    var_dump($IntPostId);
+    var_dump($PostIdent);
     $pdo = new PDO("mysql:host=learnphp;dbname=testing","root","");
-    $statement = $pdo -> query("UPDATE `posts` SET `name`='$PostName',`description`='$PostText' WHERE Id='$IntPostId'");
+    $statement = $pdo -> query("UPDATE `posts` SET `name`='$PostName',`description`='$PostText' WHERE Id='$PostIdent'");
     var_dump($statement);
 ?>
 <!DOCTYPE html>
@@ -39,7 +38,7 @@
         <br>
     </div>
     <div class="container">
-        <form action="newpost.php">
+        <form action="confirmupdating.php">
             <button type="button" class="btn btn-dark" onclick="document.location='index.php'">Return to homepage</button>
         </form>
     </div>
